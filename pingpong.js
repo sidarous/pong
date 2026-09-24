@@ -94,7 +94,12 @@ window.setInterval(function show() {
 		positionOfPaddle2 = window.innerHeight - paddleHeight;
 	}
 	//8. If it bounces off the top of the screen, the top speed will become negative and it will go in the other direction
-	if (topPositionOfBall <= 10 || topPositionOfBall >= window.innerHeight - ballRadius) {
+	if (topPositionOfBall <= 10) {
+		topPositionOfBall = 10;
+		topSpeedOfBall = -topSpeedOfBall
+	}
+	if (topPositionOfBall >= window.innerHeight - ballRadius) {
+		topPositionOfBall = window.innerHeight - ballRadius;
 		topSpeedOfBall = -topSpeedOfBall
 	}
 
@@ -138,4 +143,3 @@ function play_button() {
 }
 
 play_button()
-
